@@ -1,0 +1,15 @@
+<ul>
+    <% oldDinoData.forEach((dino)=> {%>
+        <li> <%= dino.type %> is a<br><img src="<%=dino.img_url%>"></li>
+        <li></li>
+    <%})%>
+</ul>
+
+<ul>
+    <% oldDinoData.forEach((dino, index)=> {%>
+        <li><%= dino.name%> is a <%= dino.type %></li>
+        <form action="/prehistoric_creatures/<%=index %>/?_method=Delete" method="POST">
+            <input type="submit" value="Delete">
+        </form>
+    <%})%>
+</ul>
